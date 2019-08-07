@@ -1,11 +1,38 @@
 version: "3.7"
 services:
-  bitcoin-simulator:
+  bitcoin-normal:
     build: .
     image: bitcoin-simulator:latest
-#    mpirun --allow-run-as-root -n 12
-#    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=6000 --sendheaders --relayNetwork --prioritiseDownload' > ~/logs/log_download.txt"
-    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=20 --nodes=6000 --sendheaders --relayNetwork --prioritiseUpload' > ~/logs/log_upload_header.txt"
-#    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=20 --nodes=6000 --sendheaders --relayNetwork' > ~/logs/log_sendheader_relay.txt"
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600' > ~/logs/bitcoin-normal.txt"
+    volumes:
+      - ./logs:/root/logs
+
+  bitcoin-relay:
+    image: bitcoin-simulator:latest
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600 --relayNetwork' > ~/logs/bitcoin-relay.txt"
+    volumes:
+      - ./logs:/root/logs
+
+  bitcoin-sendheader:
+    image: bitcoin-simulator:latest
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600 --sendheaders' > ~/logs/bitcoin-sendheader.txt"
+    volumes:
+      - ./logs:/root/logs
+
+  bitcoin-relay-sendheader:
+    image: bitcoin-simulator:latest
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader.txt"
+    volumes:
+      - ./logs:/root/logs
+
+  bitcoin-relay-sendheader-download:
+    image: bitcoin-simulator:latest
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600 --relayNetwork --sendheaders --prioritiseDownload' > ~/logs/bitcoin-relay-sendheader-download.txt"
+    volumes:
+      - ./logs:/root/logs
+
+  bitcoin-relay-sendheader-upload:
+    image: bitcoin-simulator:latest
+    command: bash -c "mpirun --allow-run-as-root -n 8 ./waf --run 'bitcoin-test --noBlocks=1 --nodes=600 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload.txt"
     volumes:
       - ./logs:/root/logs

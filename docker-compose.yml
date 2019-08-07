@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  bitcoin-simulator:
+    build: .
+    image: bitcoin-simulator:latest
+#    mpirun --allow-run-as-root -n 12
+#    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=6000 --sendheaders --relayNetwork --prioritiseDownload' > ~/logs/log_download.txt"
+    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=20 --nodes=6000 --sendheaders --relayNetwork --prioritiseUpload' > ~/logs/log_upload_header.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 12 ./waf --run 'bitcoin-test --noBlocks=20 --nodes=6000 --sendheaders --relayNetwork' > ~/logs/log_sendheader_relay.txt"
+    volumes:
+      - ./logs:/root/logs

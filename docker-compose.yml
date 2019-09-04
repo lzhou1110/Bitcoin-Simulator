@@ -3,19 +3,19 @@ services:
 #  bitcoin-normal:
 #    build: .
 #    image: lzhou1110/bitcoin-simulator:2016
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal-2016.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader:
 #    image: lzhou1110/bitcoin-simulator:2016
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader-2016.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader-upload:
 #    image: lzhou1110/bitcoin-simulator:2016
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload-2016.txt"
 #    volumes:
 #      - ./logs:/root/logs
 
@@ -24,19 +24,19 @@ services:
 #  bitcoin-normal:
 #    build: .
 #    image: lzhou1110/bitcoin-simulator:2019
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal-2019.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader:
 #    image: lzhou1110/bitcoin-simulator:2019
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader-2019.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader-upload:
 #    image: lzhou1110/bitcoin-simulator:2019
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload-2019.txt"
 #    volumes:
 #      - ./logs:/root/logs
 
@@ -45,18 +45,18 @@ services:
 #  bitcoin-normal:
 #    build: .
 #    image: lzhou1110/bitcoin-simulator:optimal
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100' > ~/logs/bitcoin-normal-optimal.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader:
 #    image: lzhou1110/bitcoin-simulator:optimal
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders' > ~/logs/bitcoin-relay-sendheader-optimal.txt"
 #    volumes:
 #      - ./logs:/root/logs
 #
 #  bitcoin-relay-sendheader-upload:
 #    image: lzhou1110/bitcoin-simulator:optimal
-#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload.txt"
+#    command: bash -c "mpirun --allow-run-as-root -n 32 ./waf --run 'bitcoin-test --noBlocks=10 --nodes=100 --relayNetwork --sendheaders --prioritiseUpload' > ~/logs/bitcoin-relay-sendheader-upload-optimal.txt"
 #    volumes:
 #      - ./logs:/root/logs

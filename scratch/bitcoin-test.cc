@@ -54,8 +54,10 @@ void PrintBitcoinRegionStats(uint32_t *bitcoinNodesRegions, uint32_t totalNodes)
 
 NS_LOG_COMPONENT_DEFINE ("MyMpiTest");
 
+
 int
 main(int argc, char *argv[]) {
+
 #ifdef NS3_MPI
     bool nullmsg = false;
     bool testScalability = false;
